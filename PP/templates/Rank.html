@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../static/css/main4.css" />
+    <title> Rank </title>
+</head>
+
+<style>
+    table{
+        padding: 15px;
+        }
+    body{
+        background-attachment: fixed;
+    }
+    h1{
+        font-size:50px;
+        color:rgb(0, 0, 0);
+    }
+    
+</style>
+
+<body style="Background-image:url('http://cat-int.org/wp-content/uploads/2014/11/login-bg-2.jpg')">
+    <h1 class="title">
+        <center> Ranking </center>
+    </h1>
+
+    <div >
+            <table border="1" style="background-color:#FFE4C4" align="left" width="40%"  height="20%" >
+                    {% for i in urlrank: %}
+                    <tr align="center">
+                        <td><a href={{i}} style="color:blue;">{{ i }}</a></td>
+                    </tr>
+                    {% endfor %}
+            </table>
+            
+            <table border="1" style="background-color:#FFB6C1" align="right" width="40%"  height="40%" >
+                         {% for i in rank1: %}
+                        <tr align="center" >
+                             {%if i[1] != "NOT FOUND":%}
+                         <td> {{"%.4f"% i[1] }} </td>
+                         {%else:%}
+                            <td> {{ i[1] }} </td>
+                            {%endif%}
+                        </tr>
+                        {% endfor %}
+             </table>
+          
+    </div>
+       
+ 
+
+
+
+</body>
+
+</html>

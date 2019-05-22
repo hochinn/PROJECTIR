@@ -1,0 +1,62 @@
+import requests
+from lxml import html
+from bs4 import BeautifulSoup
+import nltk
+import re
+
+nltk.download('stopwords')
+ 
+from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.corpus import stopwords
+
+
+from google.colab import files
+import pandas as pd
+import io
+
+uploaded = files.upload()
+nltk.download('punkt')
+df = pd.read_csv('link1-100.csv')
+
+
+
+text2 = []
+text = []
+page = {}
+for i in range(0,50):
+  web = df['URL'][i]
+  resp = requests.get(web)
+  soup = BeautifulSoup(resp.content, 'html.parser')
+
+  content = soup.find("body").get_text()
+  
+  words = re.findall("[A-Za-z]+",content)
+  stopWords = set(stopwords.words('english'))
+  wordFiltered = []
+  for w in words:
+    if w not in stopWords:
+      wordFiltered.append(w)
+      
+
+  tokens = wordFiltered
+  
+  sad = []
+  
+  for d in tokens:
+    if d.lower() not in sad:
+      sad.append(d.lower())
+    else :
+      del d
+      
+  sad.sort()
+  for j in sad:
+    word = {'word':j.lower(),'page':i+1}
+    text.append(word)
+    pos = []
+    p=1
+    for n in tokens:
+          if(j==n.lower()):
+            pos.append(p)
+          p+=1
+          word.update({'pos':pos})
+      

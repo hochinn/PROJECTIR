@@ -1,0 +1,96 @@
+<html>
+
+<head>
+  <title>ONLY GU Search</title>
+  <link rel="shortcut icon" href="static/images/logo.png" type="image/x-icon">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="colorlib.com">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+  <link href="static/main.css" rel="stylesheet" />
+</head>
+<style>
+    body{
+      margin: 0;
+    }
+    .s130 {
+    min-height: 100vh;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    background: url("http://cat-int.org/wp-content/uploads/2014/11/login-bg-2.jpg");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 15px;
+  }
+  input[type=text] {
+    border: 2px solid rgb(149, 160, 255);
+    border-radius: 4px;
+    height: 50px;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: rgb(125, 78, 255);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: rgb(170, 144, 241);
+  color: black;
+  border: 2px solid rgb(156, 69, 255);
+} 
+    .center{
+      margin: auto auto;
+    }
+  </style>
+  <body>
+     <div class="s130">
+      <form action="http://seashore.informatics.buu.ac.th/~59160963/PROJECTIRDDD/PP/templates/result" method="POST">
+        <br></br>
+        <br></br>
+       
+      
+           <center>
+                <br>
+                 <img src = "https://sv1.picz.in.th/images/2019/01/28/ThWtc1.png">   
+                 </br>
+           </center>
+           <br>
+           <br></br>
+           <br></br>
+
+           <br></br>
+           <input id="search" type="text" class="content"  name="Search" value="" size="100"/>
+           <br>
+          </br>
+          <br>
+          </br>
+           <center>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="button" type="submit" class="content" id="button2" value="SEARCH" />
+          
+           </center>
+           </div>
+
+  </form>
+
+</div>
+ 
+
+
+  <script src="js/extention/choices.js"></script>
+  <script>
+    const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false
+      });
+
+  </script>
+  
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

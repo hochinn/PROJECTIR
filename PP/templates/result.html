@@ -1,0 +1,127 @@
+<section class="container">
+
+    <head>
+        <link rel="stylesheet" href="../static/css/main4.css" />
+        <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+
+        <title> RESULT </title>
+    </head>
+    <style>
+         input[type=button] {
+             border: 2px solid rgb(247, 5, 5);
+             border-radius: 4px;
+             height: 50px;
+
+        }
+        h1{
+            font-size:50px;
+            color:rgb(0, 0, 0);
+  
+        }
+        .pricing_table_wdg{
+            border:1px solid #451168;
+	        border-radius:20px;
+	        -moz-border-radius:20px;
+	        -webkit-border-radius:4px;
+	        float:left;
+            margin-top: 25px;
+            width: 100%;
+
+        }
+        .pricing_table_wdg li{
+            background-color:	#FFE4E1;
+	        padding:10px 0;
+
+        }
+
+        .widthTable {
+            width: 24.13%;
+        }
+    </style>   
+    <body style="Background-image:url('http://cat-int.org/wp-content/uploads/2014/11/login-bg-2.jpg')">
+        <h1 class="title">
+            <h1>RESULT</h1>
+            <div class="s132">
+                <form action="http://seashore.informatics.buu.ac.th/~59160963/PROJECTIRDDD/PP/templates/Rank" method="POST">
+                    <input id="search" type="hidden" name="Search" value="{{word}}" />
+                    <center><input class="Search" size="100" type="button" value="Rank"
+                        onClick="this.form.action='http://seashore.informatics.buu.ac.th/~59160963/PROJECTIRDDD/PP/templates/Rank'; submit()" formmethod="post" style="width: 10%"></center>
+                </form>
+            </div>
+        </h1>
+
+        <div class="pricing_table_wdg" ><center>
+
+            <ul style="background:black;width: 24.1%">
+                <li style="background: pink">INVERTED INDEX</li>
+                <li>Count : {{ resultin1 }}</li>
+                <li>Time : {{ resultin1 }} </li>
+                <li>LINK</li>
+                <li class="infos">
+                    {% for key,value in resultin.items(): %}
+                    {% for i in  value: %}
+                    <h3>
+                        <td style="font-size:16px"><a href={{ i }} style="color:rgb(89, 60, 250);"> {{ i }}</a> </td>
+                    </h3>
+                    {% endfor %}
+                    {% endfor %}
+                </li>
+                <li></li>
+            </ul>
+
+            <ul style="background:black;width: 24.1%">
+                <li style="background: pink">POSITIONAL INDEX</li>
+                <li>Count : {{ resultpo1 }}</li>
+                <li>Time : {{ retimepo }}</li>
+                <li>LINK</li>
+                <li class="infos">
+                    {% for key,value in resultpo.items(): %}
+                    {% for i in  value: %}
+                    <h3>
+                        <td style="font-size:16px"><a href={{ i }} style="color:rgb(89, 60, 250);"> {{ i }}</a> </td>
+                    </h3>
+                    {% endfor %}
+                    {% endfor %}
+                </li>
+                <li></li>
+            </ul>
+
+        
+            <ul style="background:black;width: 24.1%">
+                <li style="background: pink">BST</li>
+                <li>Count : {{resulttree1}}</li>
+                <li>Time : {{ retimetree }} </li>
+                <li>LINK</li>
+                <li class="infos">
+                    {% for key,value in resulttree.items(): %}
+                    {% for i in  value: %}
+                    <h3>
+                        <td style="font-size:16px"><a href={{ i }} style="color:rgb(89, 60, 250);"> {{ i }}</a> </td>
+                    </h3>
+                    {% endfor %}
+                    {% endfor %}
+                </li>
+                <li></li>
+            </ul>
+            <ul style="background:black;width: 24.1%">
+                    <li style="background: pink">HASH</li>
+                    <li>Count : {{ resulthash1 }}</li>
+                    <li>Time : {{ retimehash }}</li>
+                    <li>LINK</li>
+                    <li class="infos">
+                        {% for key,value in resulthash.items(): %}
+                        {% for i in  value: %}
+                        <h3>
+                            <td style="font-size:16px"><a href={{ i }} style="color:rgb(89, 60, 250);"> {{ i }}</a> </td>
+                        </h3>
+                        {% endfor %}
+                        {% endfor %}
+                    </li>
+                    <li></li>
+                </ul>
+
+        
+        </center></div>
+    </body>
+</section>
